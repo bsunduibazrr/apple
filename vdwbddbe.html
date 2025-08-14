@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday My Love</title>
+    <style>
+      /* Cosmic Birthday Theme */
+
+      :root {
+        --birthday-pink: #ff6b8b;
+
+        --birthday-gold: #ffd700;
+
+        --birthday-purple: #c71585;
+
+        --glow-color: rgba(255, 107, 139, 0.7);
+
+        --deep-space: #1a1a2e;
+
+        --starry-night: #16213e;
+      }
+
+      @keyframes cosmicBackground {
+        0% {
+          background-position: 0% 0%;
+        }
+
+        50% {
+          background-position: 100% 100%;
+        }
+
+        100% {
+          background-position: 0% 0%;
+        }
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+
+        50% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      body {
+        margin: 0;
+
+        padding: 0;
+
+        background: linear-gradient(
+          135deg,
+          var(--deep-space),
+          var(--starry-night)
+        );
+
+        background-size: 400% 400%;
+
+        animation: cosmicBackground 30s ease infinite;
+
+        font-family: "Dancing Script", cursive, "Arial", sans-serif;
+
+        height: 100vh;
+
+        overflow: hidden;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        color: white;
+
+        perspective: 1000px;
+      }
+
+      .stars {
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        pointer-events: none;
+
+        z-index: 0;
+      }
+
+      .star {
+        position: absolute;
+
+        background-color: white;
+
+        border-radius: 50%;
+
+        animation: twinkle 3s infinite ease-in-out;
+      }
+
+      /* Main Container */
+
+      .birthday-card {
+        position: relative;
+
+        z-index: 10;
+
+        text-align: center;
+
+        width: 90%;
+
+        max-width: 800px;
+
+        padding: 40px;
+
+        border-radius: 20px;
+
+        background: rgba(26, 26, 46, 0.7);
+
+        backdrop-filter: blur(10px);
+
+        box-shadow: 0 0 50px rgba(255, 107, 139, 0.5),
+          0 0 0 1px rgba(255, 215, 0, 0.3);
+
+        border: 1px solid rgba(199, 21, 133, 0.3);
+      }
+
+      /* Birthday Title */
+
+      .birthday-title {
+        font-size: 3.5rem;
+
+        margin-bottom: 30px;
+
+        color: var(--birthday-gold);
+
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+
+        animation: float 4s ease-in-out infinite;
+      }
+
+      /* Heart Container */
+
+      .heart-container {
+        position: relative;
+
+        width: 200px;
+
+        height: 200px;
+
+        margin: 0 auto 40px;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+      }
+
+      /* Birthday Heart */
+
+      .birthday-heart {
+        font-size: 120px;
+
+        color: var(--birthday-pink);
+
+        position: relative;
+
+        z-index: 5;
+
+        text-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color),
+          0 0 60px rgba(255, 255, 255, 0.4);
+
+        animation: heartbeat 1.5s ease infinite, float 6s ease-in-out infinite;
+
+        transform-origin: center;
+
+        cursor: pointer;
+
+        transition: all 0.3s;
+      }
+
+      .birthday-heart:hover {
+        transform: scale(1.1);
+
+        filter: brightness(1.2);
+      }
+
+      /* Heart Aura */
+
+      .heart-aura {
+        position: absolute;
+
+        border-radius: 50%;
+
+        pointer-events: none;
+      }
+
+      .aura-1 {
+        width: 180px;
+
+        height: 180px;
+
+        border: 3px solid rgba(255, 107, 139, 0.6);
+
+        animation: pulse-aura-1 2.4s ease infinite;
+      }
+
+      .aura-2 {
+        width: 240px;
+
+        height: 240px;
+
+        border: 2px solid rgba(255, 215, 0, 0.5);
+
+        animation: pulse-aura-2 3s ease infinite;
+      }
+
+      .aura-3 {
+        width: 300px;
+
+        height: 300px;
+
+        border: 1px solid rgba(199, 21, 133, 0.4);
+
+        animation: pulse-aura-3 3.6s ease infinite;
+      }
+
+      /* Birthday Message */
+
+      .birthday-message {
+        font-size: 1.8rem;
+
+        line-height: 1.6;
+
+        margin: 30px 0;
+
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+        transition: all 1s ease;
+      }
+
+      .show-message {
+        opacity: 1;
+
+        transform: translateY(0);
+      }
+
+      /* Cake Animation */
+
+      .cake-container {
+        position: relative;
+
+        height: 120px;
+
+        margin: 30px 0;
+      }
+
+      .cake {
+        font-size: 60px;
+
+        position: relative;
+
+        z-index: 2;
+
+        animation: float 5s ease-in-out infinite;
+      }
+
+      .candle {
+        position: absolute;
+
+        width: 8px;
+
+        height: 30px;
+
+        background: linear-gradient(to bottom, #ffd700, #ff8c00);
+
+        border-radius: 4px;
+
+        top: -40px;
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        z-index: 3;
+
+        box-shadow: 0 0 10px #ffd700;
+      }
+
+      .flame {
+        position: absolute;
+
+        width: 15px;
+
+        height: 30px;
+
+        background: linear-gradient(to bottom, #ffff00, #ff8c00);
+
+        border-radius: 50% 50% 20% 20%;
+
+        top: -70px;
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        z-index: 4;
+
+        box-shadow: 0 0 20px #ffd700, 0 0 40px #ffff00;
+
+        animation: flicker 0.5s infinite alternate;
+      }
+
+      /* Floating Elements */
+
+      .floating-elements {
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        pointer-events: none;
+
+        z-index: 1;
+
+        overflow: hidden;
+      }
+
+      .floating-heart {
+        position: absolute;
+
+        font-size: 24px;
+
+        color: var(--birthday-pink);
+
+        animation: float-up 8s linear infinite;
+
+        opacity: 0;
+
+        text-shadow: 0 0 10px var(--glow-color);
+      }
+
+      .floating-balloon {
+        position: absolute;
+
+        font-size: 30px;
+
+        animation: float-up 10s linear infinite;
+
+        opacity: 0;
+      }
+
+      /* Interactive Effects */
+
+      .interactive-effects {
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        pointer-events: none;
+
+        z-index: 2;
+      }
+
+      .confetti {
+        position: absolute;
+
+        width: 12px;
+
+        height: 12px;
+
+        background: linear-gradient(
+          45deg,
+          var(--birthday-pink),
+          var(--birthday-gold),
+          var(--birthday-purple)
+        );
+
+        opacity: 0;
+
+        animation: confetti-fall 3s linear forwards;
+      }
+
+      /* Animations */
+
+      @keyframes heartbeat {
+        0% {
+          transform: scale(1) rotate(0deg);
+        }
+
+        15% {
+          transform: scale(1.1) rotate(-2deg);
+        }
+
+        30% {
+          transform: scale(1.15) rotate(2deg);
+        }
+
+        45% {
+          transform: scale(1.1) rotate(-2deg);
+        }
+
+        60% {
+          transform: scale(1.15) rotate(2deg);
+        }
+
+        75% {
+          transform: scale(1.1) rotate(-1deg);
+        }
+
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
+      }
+
+      @keyframes pulse-aura-1 {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+
+        50% {
+          transform: scale(1.2);
+          opacity: 0.4;
+        }
+      }
+
+      @keyframes pulse-aura-2 {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.6;
+        }
+
+        50% {
+          transform: scale(1.3);
+          opacity: 0.2;
+        }
+      }
+
+      @keyframes pulse-aura-3 {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.4;
+        }
+
+        50% {
+          transform: scale(1.4);
+          opacity: 0.1;
+        }
+      }
+
+      @keyframes float-up {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+
+        20% {
+          opacity: 0.8;
+        }
+
+        80% {
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: translateY(-100px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes confetti-fall {
+        0% {
+          transform: translateY(-100px) rotate(0deg);
+          opacity: 1;
+        }
+
+        100% {
+          transform: translateY(100vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes flicker {
+        0%,
+        100% {
+          transform: translateX(-50%) scale(1);
+          opacity: 1;
+        }
+
+        50% {
+          transform: translateX(-50%) scale(0.9);
+          opacity: 0.8;
+        }
+      }
+
+      /* Signature */
+
+      .signature {
+        position: fixed;
+
+        bottom: 20px;
+
+        right: 20px;
+
+        color: rgba(255, 255, 255, 0.7);
+
+        font-size: 1.2rem;
+
+        font-style: italic;
+      }
+
+      /* Music Player */
+
+      .music-player {
+        position: fixed;
+
+        bottom: 20px;
+
+        left: 20px;
+
+        color: white;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        z-index: 100;
+      }
+
+      .music-btn {
+        background: rgba(255, 255, 255, 0.2);
+
+        border: none;
+
+        width: 40px;
+
+        height: 40px;
+
+        border-radius: 50%;
+
+        color: white;
+
+        cursor: pointer;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-size: 18px;
+
+        transition: all 0.3s;
+      }
+
+      .music-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      /* Responsive */
+
+      @media (max-width: 768px) {
+        .birthday-card {
+          padding: 20px;
+        }
+
+        .birthday-title {
+          font-size: 2.5rem;
+        }
+
+        .birthday-message {
+          font-size: 1.4rem;
+        }
+
+        .birthday-heart {
+          font-size: 80px;
+        }
+
+        .cake {
+          font-size: 40px;
+        }
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Cosmic Background -->
+    <div class="stars" id="stars"></div>
+    <!-- Floating Elements -->
+    <div class="floating-elements" id="floatingElements"></div>
+    <!-- Interactive Effects -->
+    <div class="interactive-effects" id="interactiveEffects"></div>
+    <!-- Main Content -->
+    <div class="birthday-card">
+      <h1 class="birthday-title">Happy Birthday My Love! 🎉</h1>
+      <!-- Heart with Aura -->
+      <div class="heart-container">
+        <div class="heart-aura aura-3"></div>
+        <div class="heart-aura aura-2"></div>
+        <div class="heart-aura aura-1"></div>
+        <div class="birthday-heart" id="birthdayHeart">❤️</div>
+      </div>
+
+      <!-- Birthday Cake -->
+      <div class="cake-container">
+        <div class="cake">🎂</div>
+        <div class="candle"></div>
+        <div class="flame"></div>
+      </div>
+      <!-- Birthday Message -->
+      <div class="birthday-message" id="birthdayMessage">
+        To the most amazing girl in the world...
+      </div>
+    </div>
+    <!-- Signature -->
+    <div class="signature">Made with all my love for you</div>
+    <!-- Music Player -->
+    <div class="music-player">
+      <button class="music-btn" id="musicBtn">🎵</button>
+      <span>Birthday Song</span>
+      <audio id="bgMusic" loop>
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+    </div>
+    <script>
+      // Create stars for background
+
+      const starsContainer = document.getElementById("stars");
+
+      for (let i = 0; i < 200; i++) {
+        const star = document.createElement("div");
+
+        star.className = "star";
+
+        star.style.width = `${Math.random() * 3}px`;
+
+        star.style.height = star.style.width;
+
+        star.style.left = `${Math.random() * 100}vw`;
+
+        star.style.top = `${Math.random() * 100}vh`;
+
+        star.style.animationDelay = `${Math.random() * 5}s`;
+
+        starsContainer.appendChild(star);
+      }
+
+      // DOM Elements
+
+      const birthdayHeart = document.getElementById("birthdayHeart");
+
+      const birthdayMessage = document.getElementById("birthdayMessage");
+
+      const floatingElements = document.getElementById("floatingElements");
+
+      const interactiveEffects = document.getElementById("interactiveEffects");
+
+      const musicBtn = document.getElementById("musicBtn");
+
+      const bgMusic = document.getElementById("bgMusic");
+
+      // Birthday Messages
+
+      const birthdayMessages = [
+        "To the most amazing girl in the world...",
+
+        "Your smile brightens my darkest days",
+
+        "You make every day feel like a celebration",
+
+        "Wishing you the happiest of birthdays my love",
+
+        "May your day be as beautiful as you are",
+
+        "I'm so lucky to have you in my life",
+
+        "You deserve all the happiness in the world",
+
+        "My heart celebrates you today and every day",
+
+        "You're more beautiful with each passing year",
+
+        "Thank you for being you - perfect in every way",
+
+        "I fall in love with you more every birthday",
+
+        "You're my favorite person in the universe",
+
+        "Your birthday is my favorite holiday",
+
+        "The world became brighter when you were born",
+
+        "I can't imagine my life without you in it",
+
+        "You're the best thing that ever happened to me",
+
+        "My wish for you is endless happiness",
+
+        "You're my dream come true",
+
+        "I love you more than words can express",
+
+        "Happy birthday to my soulmate",
+      ];
+
+      // Show initial message after delay
+
+      setTimeout(() => {
+        birthdayMessage.classList.add("show-message");
+      }, 1000);
+
+      // Create initial floating elements
+
+      createFloatingElements(15);
+
+      // Music player control
+
+      let musicPlaying = false;
+
+      musicBtn.addEventListener("click", () => {
+        if (musicPlaying) {
+          bgMusic.pause();
+
+          musicBtn.textContent = "🎵";
+        } else {
+          bgMusic.play();
+
+          musicBtn.textContent = "🔊";
+        }
+
+        musicPlaying = !musicPlaying;
+      });
+
+      // Heart click event
+
+      birthdayHeart.addEventListener("click", (e) => {
+        // Change message
+
+        const randomMessage =
+          birthdayMessages[Math.floor(Math.random() * birthdayMessages.length)];
+
+        birthdayMessage.textContent = randomMessage;
+
+        // Create heart burst effect
+
+        createHeartBurst(e.clientX, e.clientY);
+
+        // Create confetti explosion
+
+        createConfettiExplosion();
+
+        // Create additional floating elements
+
+        createFloatingElements(5);
+      });
+
+      // Create floating elements (hearts and balloons)
+
+      function createFloatingElements(count) {
+        for (let i = 0; i < count; i++) {
+          // Randomly choose between heart or balloon
+
+          const isHeart = Math.random() > 0.3;
+
+          const element = document.createElement("div");
+
+          element.className = isHeart ? "floating-heart" : "floating-balloon";
+
+          element.innerHTML = isHeart ? "❤️" : "🎈";
+
+          // Random properties
+
+          element.style.left = `${Math.random() * 100}vw`;
+
+          element.style.fontSize = `${20 + Math.random() * 20}px`;
+
+          element.style.animationDuration = `${5 + Math.random() * 6}s`;
+
+          element.style.animationDelay = `${Math.random() * 5}s`;
+
+          element.style.opacity = `${0.5 + Math.random() * 0.5}`;
+
+          // Random colors
+
+          if (isHeart) {
+            const heartColors = ["#ff6b8b", "#ff8fab", "#ffb3c6"];
+
+            element.style.color =
+              heartColors[Math.floor(Math.random() * heartColors.length)];
+          } else {
+            const balloonColors = [
+              "#ff6b8b",
+              "#ffd700",
+              "#c71585",
+              "#9370db",
+              "#ffa500",
+            ];
+
+            element.style.color =
+              balloonColors[Math.floor(Math.random() * balloonColors.length)];
+          }
+
+          floatingElements.appendChild(element);
+
+          // Remove after animation
+
+          setTimeout(() => {
+            element.remove();
+          }, parseFloat(element.style.animationDuration) * 1000);
+        }
+      }
+
+      // Create heart burst effect
+
+      function createHeartBurst(x, y) {
+        const burstCount = 16;
+
+        const angleIncrement = (Math.PI * 2) / burstCount;
+
+        for (let i = 0; i < burstCount; i++) {
+          const heart = document.createElement("div");
+
+          heart.className = "floating-heart";
+
+          heart.innerHTML = "❤️";
+
+          // Position at click location
+
+          heart.style.left = `${x}px`;
+
+          heart.style.top = `${y}px`;
+
+          // Random size
+
+          const size = 15 + Math.random() * 25;
+
+          heart.style.fontSize = `${size}px`;
+
+          // Burst direction
+
+          const angle = angleIncrement * i;
+
+          const distance = 50 + Math.random() * 150;
+
+          const xOffset = Math.cos(angle) * distance;
+
+          const yOffset = Math.sin(angle) * distance;
+
+          // Custom animation
+
+          heart.style.animation = `none`;
+
+          heart.style.setProperty("--tx", `${xOffset}px`);
+
+          heart.style.setProperty("--ty", `${yOffset - 150}px`);
+
+          // Random color
+
+          const heartColors = ["#ff6b8b", "#ff8fab", "#ffb3c6"];
+
+          heart.style.color =
+            heartColors[Math.floor(Math.random() * heartColors.length)];
+
+          interactiveEffects.appendChild(heart);
+
+          // Force reflow
+
+          void heart.offsetWidth;
+
+          // Apply animation
+
+          heart.style.animation = `float-up 1s ease-out forwards`;
+
+          // Remove after animation
+
+          setTimeout(() => {
+            heart.remove();
+          }, 1000);
+        }
+      }
+
+      // Create confetti explosion
+
+      function createConfettiExplosion() {
+        const confettiCount = 50;
+
+        const colors = ["#ff6b8b", "#ffd700", "#c71585", "#9370db", "#ffa500"];
+
+        for (let i = 0; i < confettiCount; i++) {
+          const confetti = document.createElement("div");
+
+          confetti.className = "confetti";
+
+          // Position at heart center
+
+          const heartRect = birthdayHeart.getBoundingClientRect();
+
+          confetti.style.left = `${heartRect.left + heartRect.width / 2}px`;
+
+          confetti.style.top = `${heartRect.top + heartRect.height / 2}px`;
+
+          // Random shape
+
+          if (Math.random() > 0.5) {
+            confetti.style.borderRadius = "50%";
+          }
+
+          // Random color
+
+          confetti.style.background = `linear-gradient(45deg, ${
+            colors[Math.floor(Math.random() * colors.length)]
+          }, ${colors[Math.floor(Math.random() * colors.length)]})`;
+
+          // Random size
+
+          const size = 6 + Math.random() * 6;
+
+          confetti.style.width = `${size}px`;
+
+          confetti.style.height = `${size}px`;
+
+          // Random rotation
+
+          confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+          interactiveEffects.appendChild(confetti);
+
+          // Force reflow
+
+          void confetti.offsetWidth;
+
+          // Start animation
+
+          confetti.style.animation = `confetti-fall ${
+            1 + Math.random() * 2
+          }s linear forwards`;
+
+          // Remove after animation
+
+          setTimeout(() => {
+            confetti.remove();
+          }, 3000);
+        }
+      }
+
+      // Auto-change message every 10 seconds
+
+      setInterval(() => {
+        const randomMessage =
+          birthdayMessages[Math.floor(Math.random() * birthdayMessages.length)];
+
+        birthdayMessage.classList.remove("show-message");
+
+        setTimeout(() => {
+          birthdayMessage.textContent = randomMessage;
+
+          birthdayMessage.classList.add("show-message");
+        }, 500);
+      }, 10000);
+
+      // Create occasional floating elements
+
+      setInterval(() => {
+        createFloatingElements(3);
+      }, 3000);
+    </script>
+  </body>
+</html>
