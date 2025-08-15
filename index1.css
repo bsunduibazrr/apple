@@ -1120,6 +1120,10 @@
   }
   .pataa {
     display: none;
+    height: 0px;
+  }
+  .nar {
+    display: none;
   }
   .garii {
     width: 238px;
@@ -1317,16 +1321,16 @@
     height: 500px;
   }
   .eej-huu {
-    display: block;
+    display: none;
   }
   .nar {
-    display: block;
+    display: none;
   }
   .women {
-    display: block;
+    display: none;
   }
   .cartoon {
-    display: block;
+    display: none;
   }
   .boxx {
     display: none;
@@ -1353,6 +1357,18 @@
   }
   .flexi1 {
     height: 36px;
+  }
+  .burhan {
+    display: none;
+  }
+  .gahai {
+    display: none;
+  }
+  .saa {
+    display: none;
+  }
+  .ygaanaahan {
+    display: none;
   }
   .flexi2 {
     height: 22px;
@@ -1388,7 +1404,7 @@
     display: none;
   }
   .pataa {
-    display: none;
+    display: block;
   }
   .bayar {
     display: none;
@@ -1396,11 +1412,16 @@
   .zulaa {
     display: none;
   }
-
+  .hi5 {
+    display: none;
+    width: 390px;
+    display: flex;
+    overflow-x: scroll;
+  }
   .chi {
     width: 274px;
     height: 495px;
-    object-fit: cover;
+
     display: none;
   }
   .zoz {
@@ -1426,14 +1447,24 @@
   }
   .replacer {
     display: block;
+    width: 390px;
+  }
+  .replacer-2 {
+    display: none;
+  }
+  .zugii222 {
+    display: block;
+  }
+  .zegii4 {
+    display: block;
   }
   .nar {
-    display: none;
+    display: block;
     width: 274px;
     height: 495px;
   }
   .eej-huu {
-    display: none;
+    display: block;
     width: 274px;
     height: 495px;
   }
